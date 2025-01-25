@@ -1,0 +1,22 @@
+#!/bin/bash
+
+ERROR=""
+
+for cmd in hx ya zellij
+do
+	if ! command -v $cmd 2>&1 >/dev/null
+	then
+	  echo "$cmd could not be found"
+		ERROR="E"
+	fi
+done
+
+if [ "$ERROR" == "E" ]; 
+then 
+	echo "something was wrong"	
+	exit 1
+else
+	echo "necessary programs are available"
+fi
+
+ya pack -i
