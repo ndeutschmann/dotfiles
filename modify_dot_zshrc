@@ -1,18 +1,13 @@
-{{- /* chezmoi:modify-template */ -}}
-{{- .chezmoi.stdin -}}
+#!/bin/sh
+tempfile="$(mktemp)"
+trap 'rm -rf "${tempfile}"' EXIT
+cat > "${tempfile}"
 
-#yazi
-function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
-}
+cat "${tempfile}"
 
-eval "$(zoxide init zsh)"
-
-alias hux="uv run hx"
-
-export EDITOR="hx"
+set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"'
+for S in "$@" ; do
+  if ! grep -Fxq "$S" "${tempfile}"; then
+    echo "$S"
+  fi
+done
