@@ -5,7 +5,7 @@ cat > "${tempfile}"
 
 cat "${tempfile}"
 
-set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"' 'source ~/.local/share/completions/hx.zsh'
+set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"' 'source ~/.local/share/completions/hx.zsh' 'eval "$(~/.local/bin/mise activate zsh)"'
 for S in "$@" ; do
   if ! grep -Fxq "$S" "${tempfile}"; then
     echo "$S"
