@@ -36,7 +36,8 @@ esac
 
 archive_name="helix-25.01.1-$arch-$sys"
 url="https://github.com/helix-editor/helix/releases/download/25.01.1/$archive_name.tar.xz"
-curl --location "$url" | tar -C "$dir" -xz
+echo $url 
+curl --location "$url" | tar -C "$dir" -xJ
 if [[ $? -ne 0 ]]
 then
     echo

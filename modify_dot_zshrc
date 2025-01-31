@@ -1,9 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 tempfile="$(mktemp)"
 trap 'rm -rf "${tempfile}"' EXIT
 cat > "${tempfile}"
 
 cat "${tempfile}"
+if ! [[ $(tail -c1 "${tempfile}" | wc -l) -gt 0 ]]; then
+  echo ""
+fi
 
 set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"' 'source ~/.local/share/completions/hx.zsh' 'eval "$(~/.local/bin/mise activate zsh)"'
 for S in "$@" ; do
