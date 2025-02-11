@@ -20,3 +20,13 @@ args = ["--stdio"]
 command = "ruff"
 args = ["server"]
 environment = { "RUFF_TRACE" = "messages" }
+
+{{ if .typst }}
+[language-server.tinymist]
+command = "tinymist"
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+{{ end }}
+

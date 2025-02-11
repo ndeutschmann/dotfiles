@@ -1,4 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $typst := promptBoolOnce . "typst" "Setup typst?" -}}
 
 [data]
     email = {{ $email | quote }}
+    typst = {{ $typst }}
