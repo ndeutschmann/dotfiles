@@ -6,3 +6,7 @@
 [alias]
 	cam = commit -am
 	bp = branch --sort=-committerdate --format='%(HEAD) %(align:35)%(color:yellow)%(refname:short)%(color:reset)%(end) - %(color:red)%(objectname:short)%(color:reset) - %(align:40)%(contents:subject)%(end) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --list 
+[push]
+	autoSetupRemote = true
+[branch]
+	autoSetupMerge = simple
