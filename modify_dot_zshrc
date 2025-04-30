@@ -8,7 +8,7 @@ if ! [[ $(tail -c1 "${tempfile}" | wc -l) -gt 0 ]]; then
   echo ""
 fi
 
-set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"' 'source ~/.local/share/completions/hx.zsh' 'eval "$(~/.local/bin/mise activate zsh)"'
+set -- 'source ~/.local/share/yazi/y' 'export EDITOR="hx"' 'eval "$(zoxide init zsh)"' 'alias hux="uv run hx"' 'alias ipytest="uv run --with \"ipdb>0.13\" --with \"ipython>=9.1\" python -m pytest"' 'source ~/.local/share/completions/hx.zsh' 'eval "$(~/.local/bin/mise activate zsh)"'
 for S in "$@" ; do
   if ! grep -Fxq "$S" "${tempfile}"; then
     echo "$S"

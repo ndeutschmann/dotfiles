@@ -3,3 +3,7 @@ edit = [
 	{ run = 'hx "$@"', block = true },
 ]
 
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
