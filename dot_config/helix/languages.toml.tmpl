@@ -4,7 +4,7 @@ language-id = "python"
 roots = ["pyproject.toml", ".git", ".jj", ".venv/"]
 language-servers = ["ruff", "pyright"]
 auto-format = true
-formatter = { command = "uvx", args = ["ruff","format", "-" ] }
+formatter = { command = "ruff", args = ["format", "-" ] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
