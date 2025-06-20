@@ -9,7 +9,9 @@ true-color = true
 
 
 [keys.normal.space.t]
+# yank surrounding test function name to the system clipboard
 "s" = "@maT<A-;>ww<space>y"
+# Assuming a test function is yanked to the system clipboard, run that test with uv [definitely has edge cases around cwd]
 "r" = "@:sh zellij run -s -f -x 10% -y 10% --width 80% --height 80% --name hx-term -- zsh -i -c \\\"uv run pytest <C-r>%::<C-r>+\\\"<ret>"
 
 [editor.soft-wrap]
