@@ -1,0 +1,12 @@
+[tools]
+eza = "latest"
+helix = "25.07.1"
+"pipx:pyright" = "1.1.380"
+ruff = "0.11.6"
+rust = "latest"
+typst = "0.13.1"
+uv = "0.8.15"
+yazi = "25.5.31"
+zellij = "0.43.1"
+zoxide = "0.9.8"
+"cargo:https://github.com/Myriad-Dreamin/tinymist" = { version = "tag:v0.13.26", locked = true, crate = "tinymist-cli" }

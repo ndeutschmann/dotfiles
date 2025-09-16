@@ -1,5 +1,17 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:smart-enter", rev = "7afba3a" }, { use = "yazi-rs/plugins:hide-preview", rev = "7afba3a" }, { use = "yazi-rs/plugins:smart-filter", rev = "8ed2537" }]
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "7afba3a"
+hash = "b25c2acb08d9ca5ff5cf71ea764fed8d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "7afba3a"
+hash = ""
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "8ed2537"
+hash = ""
 
 [flavor]
 deps = []
