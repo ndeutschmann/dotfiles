@@ -10,3 +10,10 @@ yazi = "25.5.31"
 zellij = "0.43.1"
 zoxide = "0.9.8"
 "cargo:https://github.com/Myriad-Dreamin/tinymist" = { version = "tag:v0.13.26", locked = true, crate = "tinymist-cli" }
+"cargo:rigrep" = "1.0.1"
+"cargo:bat" = "0.25.0"
+"cargo:fd-find" = "10.3.0"
+"cargo:fend" = "1.5.7"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python"]
