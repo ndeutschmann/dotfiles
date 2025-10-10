@@ -14,6 +14,8 @@ zoxide = "0.9.8"
 "cargo:bat" = "0.25.0"
 "cargo:fd-find" = "10.3.0"
 "cargo:fend" = "1.5.7"
+"pipx:gogo-gadget" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
+

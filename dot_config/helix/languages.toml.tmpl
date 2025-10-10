@@ -2,7 +2,7 @@
 name = "python"
 language-id = "python"
 roots = ["pyproject.toml", ".git", ".jj", ".venv/"]
-language-servers = ["ruff", "pyright"]
+language-servers = ["pyright", "ruff"]
 auto-format = true
 formatter = { command = "ruff", args = ["format", "-" ] }
 file-types = ["py", "ipynb"]
@@ -12,9 +12,6 @@ shebangs = ["python"]
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
-
-[language-server.pyright.config]
-
 
 [language-server.ruff]
 command = "ruff"
