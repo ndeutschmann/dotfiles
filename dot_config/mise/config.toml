@@ -1,9 +1,9 @@
 [tools]
 eza = "latest"
 helix = "25.07.1"
-"pipx:pyright" = "1.1.380"
 ruff = "0.11.6"
 rust = "latest"
+skate = "latest"
 typst = "0.13.1"
 uv = "0.8.15"
 yazi = "25.5.31"
@@ -14,8 +14,13 @@ zoxide = "0.9.8"
 "cargo:bat" = "0.25.0"
 "cargo:fd-find" = "10.3.0"
 "cargo:fend" = "1.5.7"
+"cargo:presenterm" = "latest"
+"cargo:mcat" = "latest"
+"gem:terminal-notifier" = "latest"
 "pipx:gogo-gadget" = "latest"
+"pipx:pyright" = "1.1.380"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
+experimental = true
 
