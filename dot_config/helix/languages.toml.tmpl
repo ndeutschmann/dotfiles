@@ -30,3 +30,7 @@ language-servers = ["tinymist"]
 [[language]]
 name = "rust"
 formatter = { command = "rustfmt" , args = ["+nightly"] }
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"

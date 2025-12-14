@@ -2,7 +2,7 @@
 eza = "latest"
 helix = "25.07.1"
 ruff = "0.11.6"
-rust = "latest"
+rust = "1.89.0"
 skate = "latest"
 typst = "0.13.1"
 uv = "0.8.15"
