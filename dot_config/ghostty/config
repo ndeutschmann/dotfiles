@@ -1,0 +1,5 @@
+theme = Iterm2 Solarized Dark
+window-decoration = false
+cursor-style-blink=false
+maximize=true
+font-size=15
