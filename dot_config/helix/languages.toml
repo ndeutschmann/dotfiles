@@ -4,33 +4,36 @@ language-id = "python"
 roots = ["pyproject.toml", ".git", ".jj", ".venv/"]
 language-servers = ["pyright", "ruff"]
 auto-format = true
-formatter = { command = "ruff", args = ["format", "-" ] }
+formatter = { command = "ruff", args = ["format", "-"] }
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
 
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "rustfmt" }
+language-servers = ["rust-analyzer"]
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[[language]]
+name = "toml"
+auto-format = true
 
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
 environment = { "RUFF_TRACE" = "messages" }
 
-{{ if .typst }}
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
 [language-server.tinymist]
 command = "tinymist"
-
-[[language]]
-name = "typst"
-language-servers = ["tinymist"]
-{{ end }}
-
-[[language]]
-name = "rust"
-formatter = { command = "rustfmt" , args = ["+nightly"] }
-language-servers = ["rust-analyzer"]
 
 [language-server.rust-analyzer.config]
 check.command = "clippy"

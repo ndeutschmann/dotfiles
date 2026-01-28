@@ -2,7 +2,6 @@
 eza = "latest"
 helix = "25.07.1"
 ruff = "0.11.6"
-rust = "1.89.0"
 skate = "latest"
 typst = "0.13.1"
 uv = "0.8.15"
@@ -10,17 +9,22 @@ yazi = "25.5.31"
 zellij = "0.43.1"
 zoxide = "0.9.8"
 "cargo:https://github.com/Myriad-Dreamin/tinymist" = { version = "tag:v0.13.26", locked = true, crate = "tinymist-cli" }
-"cargo:rigrep" = "1.0.1"
 "cargo:bat" = "0.25.0"
 "cargo:fd-find" = "10.3.0"
 "cargo:fend" = "1.5.7"
 "cargo:presenterm" = "latest"
-"cargo:mcat" = "latest"
 "gem:terminal-notifier" = "latest"
 "pipx:gogo-gadget" = "latest"
 "pipx:pyright" = "1.1.380"
+"github:fastfetch-cli/fastfetch" = "latest"
+just = "1.46.0"
+"aqua:fish-shell/fish-shell" = "4.3.3"
+starship = "1.24.2"
+fzf = "0.67.0"
+rust = "latest"
+"cargo:ripgrep" = "15.1.0"
+tombi = "0.7.25"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
 experimental = true
-
