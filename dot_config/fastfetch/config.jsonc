@@ -50,7 +50,7 @@
         },
         {
             "type": "custom", // InformationEnd
-            "format": "\n\n{#1}Don't forget about frg,rg,fd,eza!{#0}\n"
+            "format": "\n\n{#1}Don't forget about frog,rg,fzf(ctr-T!),fd,eza!{#0}\n"
         },
     ]
 }
