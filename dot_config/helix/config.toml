@@ -3,17 +3,58 @@ theme = "noctis"
 [editor]
 true-color = true
 
+# filesystem
 [keys.normal.space.f]
-"f" = "file_picker"
-"y" = ":sh zellij run -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open"
+f = "file_picker"
+F = "file_picker_in_current_directory"
+y = ":sh zellij run -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open"
+r = ":reload-all"
+
+#git
+[keys.normal.space.g]
+b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+r = ":reset-diff-change"
+f = "changed_file_picker"
 
 
+#editor
+[keys.normal.space.e]
+w = ":write"
+q = ":quit"
+c = ":bc" #buffer close
+x = ":bco" #buffer close others
+
+
+#jumping
+[keys.normal.space.J]
+s = "save_selection"
+j = "jumplist_picker"
+l = "jump_forward"
+h = "jump_backward"
+
+# quick-access
+[keys.normal.space]
+"=" = ":format"
+
+#tests
 [keys.normal.space.t]
 # yank surrounding test function name to the system clipboard
-"s" = "@maT<A-;>ww<space>y"
+s = "@maT<A-;>ww<space>y"
 # Assuming a test function is yanked to the system clipboard, run that test with uv [definitely has edge cases around cwd]
-"r" = "@:sh zellij run -s -f -x 10%% -y 10%% --width 80%% --height 80%% --name hx-term -- uv run pytest <C-r>%::<C-r>+<ret>"
+r = "@:sh zellij run -s -f -x 10%% -y 10%% --width 80%% --height 80%% --name hx-term -- uv run pytest <C-r>%::<C-r>+<ret>"
+# use debigguer
+d = "@:sh zellij run -s -f -x 10%% -y 10%% --width 80%% --height 80%% --name hx-term -- uv run pytest -s --pdb <C-r>%::<C-r>+<ret>"
+
+# forward-backward
+[keys.normal."]"]
+b = ":buffer-next"
+j = "jump_forward"
+
+[keys.normal."["]
+b = ":buffer-previous"
+j = "jump_backward"
 
 [editor.soft-wrap]
 enable = true
+
 
