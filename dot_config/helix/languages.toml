@@ -18,10 +18,29 @@ language-servers = ["rust-analyzer"]
 [[language]]
 name = "typst"
 language-servers = ["tinymist"]
+formatter = { command = "typstyle" }
+auto-format = true
 
 [[language]]
 name = "toml"
-auto-format = true
+formatter = { command = "taplo", args = ["fmt", "-o","reorder_keys=true", "-"] }
+auto-format = false
+
+[[language]]
+name = "bibtex"
+
+[language.formatter]
+command = "bibtex-tidy"
+args = [
+  "-",
+  "--curly",
+  "--remove-empty-fields",
+  "--sort-fields",
+  "--sort=year,author,id",
+  "--trailing-commas",
+  "--tidy-comments",
+  "--no-escape"
+]
 
 [language-server.ruff]
 command = "ruff"
