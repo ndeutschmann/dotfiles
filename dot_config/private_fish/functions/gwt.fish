@@ -9,7 +9,7 @@ function gwt --description "cd to a git worktree by branch name or path"
 
     # --delete mode: remove the worktree at $argv[1], print a success/failure
     # message, then pause so it's readable before fzf reloads the list. Invoked
-    # from the fzf ctrl-d binding via `fish -c` so the syntax is always fish.
+    # from the fzf ctrl-x binding via `fish -c` so the syntax is always fish.
     if test "$argv[1]" = --delete
         set -e argv[1]
         set -l p $argv[1]
@@ -71,14 +71,14 @@ function gwt --description "cd to a git worktree by branch name or path"
             # Ignore the user's global fzf config for this picker (local + exported)
             set -lx FZF_DEFAULT_OPTS ''
             set -lx FZF_DEFAULT_OPTS_FILE ''
-            # ctrl-d: remove the highlighted worktree (path is the hidden field 1).
+            # ctrl-x: remove the highlighted worktree (path is the hidden field 1).
             # fzf runs execute() under $SHELL, so we delegate to `gwt --delete`,
             # which prints success/failure and pauses; then reload the list. The
             # path is passed as a separate argv to avoid fzf's {1} auto-quoting
             # clashing with the surrounding single quotes.
             set -l del_bind "ctrl-x:execute(fish -c 'gwt --delete \$argv[1]' {1})+reload-sync(fish -c 'gwt --list')"
             set -l choice (gwt --list | fzf --ansi --height 40% --reverse --delimiter \t --with-nth 2 \
-                --header 'enter: cd   ctrl-d: delete worktree' \
+                --header 'enter: cd   ctrl-x: delete worktree' \
                 --bind $del_bind)
             test -z "$choice"; and return 0 # user pressed Esc
             cd (string split -f1 \t -- $choice)
