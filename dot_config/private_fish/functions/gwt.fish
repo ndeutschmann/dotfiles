@@ -76,7 +76,7 @@ function gwt --description "cd to a git worktree by branch name or path"
             # which prints success/failure and pauses; then reload the list. The
             # path is passed as a separate argv to avoid fzf's {1} auto-quoting
             # clashing with the surrounding single quotes.
-            set -l del_bind "ctrl-d:execute(fish -c 'gwt --delete \$argv[1]' {1})+reload-sync(fish -c 'gwt --list')"
+            set -l del_bind "ctrl-x:execute(fish -c 'gwt --delete \$argv[1]' {1})+reload-sync(fish -c 'gwt --list')"
             set -l choice (gwt --list | fzf --ansi --height 40% --reverse --delimiter \t --with-nth 2 \
                 --header 'enter: cd   ctrl-d: delete worktree' \
                 --bind $del_bind)
